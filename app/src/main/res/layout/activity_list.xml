@@ -10,9 +10,10 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
-        android:layout_height="275dp"
+        android:layout_height="255dp"
         android:fontFamily="@font/nanumbarunpenb"
-        app:srcCompat="@drawable/notfound" />
+        app:srcCompat="@drawable/notfound"
+        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -42,9 +43,10 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="45dp"
         android:layout_marginTop="2dp"
+        android:fontFamily="@font/nanumbarunpenb"
         android:gravity="center_vertical"
         android:text=""
-        android:fontFamily="@font/nanumbarunpenb"
+        android:textAlignment="center"
         android:textSize="36sp" />
 
     <ImageView
@@ -59,25 +61,28 @@
 
     <TextView
         android:id="@+id/imgAdd"
-        android:layout_width="228dp"
+        android:layout_width="260dp"
         android:layout_height="49dp"
         android:layout_below="@+id/imageView6"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="136dp"
+        android:layout_marginStart="122dp"
         android:layout_marginTop="23dp"
-        android:gravity="center_vertical"
         android:fontFamily="@font/nanumbarunpenb"
-        android:text="" />
+        android:gravity="center_vertical"
+        android:text=""
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/add"
-        android:layout_width="136dp"
+        android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_below="@+id/imageView6"
         android:layout_marginTop="23dp"
-        android:gravity="center"
         android:fontFamily="@font/nanumbarunpenb"
-        android:text="주소 : " />
+        android:gravity="center"
+        android:text="주소 : "
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/narBtn"

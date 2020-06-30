@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -167,11 +168,14 @@ public class ListActivity extends AppCompatActivity {
 
             Button button = new Button(this);
 
+            button.getBackground().setColorFilter(0x0F7B0395, PorterDuff.Mode.MULTIPLY);
+
             //button.setText(LoadingActivity.SearchList.get(i).toString());
             button.setText(SortingList.get(i).ccName
                     +" - 약 "+SortingList.get(i).nowDistance+" km");
 
             button.setLayoutParams(params);
+
 
             button.setTag(i);
 

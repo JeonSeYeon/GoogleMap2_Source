@@ -2,9 +2,13 @@ package com.example.googlemap2_source;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,12 +17,15 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.net.HttpURLConnection;
@@ -27,7 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListClickActivity extends AppCompatActivity {
-
+    private static final String TAG = "API_img";
     public static List params;
     //API
     private String strServiceUrl;
@@ -41,6 +48,9 @@ public class ListClickActivity extends AppCompatActivity {
     String strContent = "";
     String strImg = "";
 
+    URL url;
+    InputStream is;
+    Bitmap bm;
 
     ArrayList<String> arrN = new ArrayList<>();
     ArrayList<String> arrAddress = new ArrayList<>();
@@ -78,6 +88,7 @@ public class ListClickActivity extends AppCompatActivity {
         //http://www.cha.go.kr/cha/SearchKindOpenapiDt.do?ccbaKdcd=11&ccbaAsno=00010000&ccbaCtcd=11
         ListClickActivity.DownloadWebpageTask1 objTask1 = new ListClickActivity.DownloadWebpageTask1(this);
         objTask1.execute(strServiceUrl);
+
     }
 
     class DownloadWebpageTask1 extends AsyncTask<String, Void, String> {
@@ -139,8 +150,8 @@ public class ListClickActivity extends AppCompatActivity {
                         ;
                     } else if (eventType == XmlPullParser.START_TAG) {
                         String tag_name = xpp.getName();
-                        if (tag_name.equals("ccmaName")) bSet_Num = true;
-                        if (tag_name.equals("ccbaCndt")) bSet_Img = true;
+                        if (tag_name.equals("crltsnoNm")) bSet_Num = true;
+                        if (tag_name.equals("imageUrl")) bSet_Img = true;
                         if (tag_name.equals("ccbaMnm1")) bSet_Name = true;
                         if (tag_name.equals("ccbaLcad")) bset_Address = true;
                         if (tag_name.equals("content")) bset_Content = true;
@@ -177,13 +188,24 @@ public class ListClickActivity extends AppCompatActivity {
                     eventType = xpp.next();
                 }
 
+
+                url = new URL(strImg);
+                //Log.d(TAG, "이미지당 " + strImg);
+
+                is = url.openStream();
+                bm = BitmapFactory.decodeStream(is);
+
                 txtName.setText(strName.toString());
-                txtNum.setText(strNum.toString()+"\n거리 : 약"
+                txtNum.setText("국보"+strNum.toString()+"호"+"\n거리 : 약"
                         +ListActivity.SortingList.get(ListActivity.SelectedBtn).nowDistance+" km");
                 txtAddress.setText(strAddress.toString());
                 txtContent.setText(strContent.toString());
+
+
+
+                imageView.setImageBitmap(bm); //비트맵 객체로 보여주기
+
             } catch (Exception e) {
-                txtContent.setText(e.getMessage());
             }
 
             try {
