@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.location.LocationRequest;
@@ -53,10 +54,8 @@ public class LoadingActivity extends Activity {
         setContentView(R.layout.activity_loading);
 
 
-        t = (TextView) findViewById(R.id.textView);
-
-        t.bringToFront();
-        strServiceUrl = "https://www.cha.go.kr/cha/SearchKindOpenapiList.do";
+        //strServiceUrl = "https://www.cha.go.kr/cha/SearchKindOpenapiList.do";
+        strServiceUrl = "https://www.cha.go.kr/cha/SearchKindOpenapiList.do?pageUnit=1000";
         //strServiceKey = "ya1BKq8iExZZZGk0EFE%2FFBzsuvW7zg3UxJ%2B2urlfmuw%2FsKlgCy%2BOt5kwNhwJbeTFoNkk26k0TcuCMjrVC4HX8Q%3D%3D";
         //strUrl = strServiceUrl + "?serviceKey=" + strServiceKey;
 

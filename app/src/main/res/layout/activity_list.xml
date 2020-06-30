@@ -11,6 +11,7 @@
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
         android:layout_height="275dp"
+        android:fontFamily="@font/nanumbarunpenb"
         app:srcCompat="@drawable/tndfpans" />
 
     <ImageView
@@ -20,6 +21,7 @@
         android:layout_below="@+id/imageView3"
         android:layout_marginTop="79dp"
         android:scaleType="fitXY"
+        android:fontFamily="@font/nanumbarunpenb"
         app:srcCompat="@drawable/blank" />
 
     <ImageView
@@ -29,6 +31,7 @@
         android:layout_below="@+id/imageView3"
         android:layout_marginTop="-2dp"
         android:scaleType="fitXY"
+        android:fontFamily="@font/nanumbarunpenb"
         app:srcCompat="@drawable/blank" />
 
     <TextView
@@ -41,6 +44,7 @@
         android:layout_marginTop="2dp"
         android:gravity="center_vertical"
         android:text=""
+        android:fontFamily="@font/nanumbarunpenb"
         android:textSize="36sp" />
 
     <ImageView
@@ -50,6 +54,7 @@
         android:layout_below="@+id/imgAdd"
         android:layout_marginTop="-2dp"
         android:scaleType="fitXY"
+        android:fontFamily="@font/nanumbarunpenb"
         app:srcCompat="@drawable/bar1" />
 
     <TextView
@@ -61,6 +66,7 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="23dp"
         android:gravity="center_vertical"
+        android:fontFamily="@font/nanumbarunpenb"
         android:text="" />
 
     <TextView
@@ -70,6 +76,7 @@
         android:layout_below="@+id/imageView6"
         android:layout_marginTop="23dp"
         android:gravity="center"
+        android:fontFamily="@font/nanumbarunpenb"
         android:text="주소 : " />
 
     <Button
@@ -80,6 +87,7 @@
         android:layout_marginTop="-9dp"
         android:backgroundTint="#7B0395"
         android:text="설명 듣기"
+        android:fontFamily="@font/nanumbarunpenb"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
@@ -90,6 +98,7 @@
         android:layout_below="@+id/imageView7"
         android:layout_alignParentStart="true"
         android:layout_marginStart="37dp"
+        android:fontFamily="@font/nanumbarunpenb"
         android:layout_marginTop="30dp"
         android:text="" />
 
@@ -101,6 +110,7 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="41dp"
         android:layout_toEndOf="@+id/imgTitle"
+        android:fontFamily="@font/nanumbarunpenb"
         android:gravity="center"
         android:text="" />
 

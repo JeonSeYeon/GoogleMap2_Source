@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/list"
+        android:title="주변 문화재 목록"
+        android:icon="@drawable/all"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/setting"
+        android:title="설정"
+        app:showAsAction="never" />
+</menu>

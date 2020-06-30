@@ -1,6 +1,7 @@
 package com.example.googlemap2_source;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -17,7 +18,10 @@ import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Looper;
+import android.provider.Settings;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -82,6 +86,8 @@ public class MapsActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         //API
         setContentView(R.layout.activity_maps);
+
+
         arrayList = (ArrayList<GetterSetter2>) getIntent().getSerializableExtra("arrayList");
 
         editText = (EditText) findViewById(R.id.editText);
@@ -97,18 +103,6 @@ public class MapsActivity extends AppCompatActivity
 
 
 
-        Button listbtn = findViewById(R.id.golist);
-        listbtn.bringToFront();
-        listbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent2 = new Intent(getApplicationContext(), ListActivity.class);
-                startActivity(intent2);
-            }
-        });
-
-
-
     }
 
 
@@ -120,7 +114,7 @@ public class MapsActivity extends AppCompatActivity
 
         geocoder = new Geocoder(this);
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(37.559975221378, 126.975312652739), mMap.getCameraPosition().zoom+3));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(37.559975221378, 126.975312652739), mMap.getCameraPosition().zoom+6));
         mMap.setOnCameraIdleListener(this);
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -226,5 +220,32 @@ public class MapsActivity extends AppCompatActivity
         if (manager!=null)
             manager.cluster();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+
+        if (id == R.id.list) {
+            Intent Intent = new Intent(this, ListActivity.class);
+            startActivity(Intent);
+            return true;
+        }
+        if (id == R.id.setting) {
+
+            Intent intent= new Intent(Settings.ACTION_SETTINGS);
+            startActivityForResult(intent,0);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
 
 }

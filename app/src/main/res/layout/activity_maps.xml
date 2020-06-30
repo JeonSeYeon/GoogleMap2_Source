@@ -15,6 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="141dp"
+        android:fontFamily="@font/nanumbarunpenb"
         android:padding="10dp"
         android:text=""
         android:textSize="25dp"
@@ -34,7 +35,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:context=".MapsActivity" />
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -44,24 +45,26 @@
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter the Address."
-            android:background="@color/cardview_light_background"/>
+            android:background="@color/cardview_light_background"
+            android:fontFamily="@font/nanumbarunpenb"
+            android:hint="주소를 입력하시오."
+            android:lineSpacingExtra="8sp"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search" />
+            android:background="#9C27B0"
+            android:fontFamily="@font/nanumbarunpenb"
+            android:text="검색"
+            android:layout_gravity="right"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
-    <Button
-        android:id="@+id/golist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="244dp"
-        android:layout_marginTop="30dp"
-        android:text="주변 문화제 전체 보기"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

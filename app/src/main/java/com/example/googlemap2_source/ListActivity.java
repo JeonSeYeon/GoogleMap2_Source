@@ -25,7 +25,6 @@ public class ListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         LinearLayout mainLayout = new LinearLayout(this);
 
         mainLayout.setOrientation(LinearLayout.VERTICAL);

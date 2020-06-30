@@ -41,6 +41,7 @@
         android:layout_marginTop="2dp"
         android:gravity="center_vertical"
         android:text="석굴암"
+        android:fontFamily="@font/nanumbarunpenb"
         android:textSize="36sp" />
 
     <ImageView
@@ -61,6 +62,7 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="23dp"
         android:gravity="center_vertical"
+        android:fontFamily="@font/nanumbarunpenb"
         android:text="경북 경주시 불국로 873-243" />
 
     <TextView
@@ -70,6 +72,7 @@
         android:layout_below="@+id/imageView6"
         android:layout_marginTop="23dp"
         android:gravity="center"
+        android:fontFamily="@font/nanumbarunpenb"
         android:text="주소 : " />
 
     <Button
@@ -80,6 +83,7 @@
         android:layout_marginTop="-9dp"
         android:backgroundTint="#7B0395"
         android:text="설명 듣기"
+        android:fontFamily="@font/nanumbarunpenb"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
@@ -91,6 +95,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="37dp"
         android:layout_marginTop="30dp"
+        android:fontFamily="@font/nanumbarunpenb"
         android:text="경상북도 경주시 토함산 동쪽에 있는 남북국시대 통일신라의 김대성이 창건한 사찰. 암자. 국보. [개설] 국보 제24호. 대한불교조계종 11교구 본사인 불국사(佛國寺)의 부속암자이다. 창건 당시의 이름은 석불사(石佛寺)였다." />
 
     <TextView
@@ -102,6 +107,7 @@
         android:layout_marginTop="41dp"
         android:layout_toEndOf="@+id/imgTitle"
         android:gravity="center"
+        android:fontFamily="@font/nanumbarunpenb"
         android:text="국보 24호" />
 
 </RelativeLayout>
