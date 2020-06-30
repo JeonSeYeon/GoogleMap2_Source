@@ -41,10 +41,6 @@ public class ListClickActivity extends AppCompatActivity {
     String strContent = "";
     String strImg = "";
 
-    //이부분 동적으로 값들어가게 바꿔야함... 누르는 버튼에 따라 다르게.
-    String ccbaKdcd = "11"; // 종목코드
-    String ccbaAsno = "00010000"; // 지정번호
-    String ccbaCtcd = "11"; // 시도코드
 
     ArrayList<String> arrN = new ArrayList<>();
     ArrayList<String> arrAddress = new ArrayList<>();
@@ -55,6 +51,15 @@ public class ListClickActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
+        Log.d("ListClickActivity", "버튼" + ListActivity.SelectedBtn + " : 클릭됨");
+        Log.d("SearchList", "SearchList - " + ListActivity.SelectedBtn
+                + " : "+ListActivity.SortingList.get(ListActivity.SelectedBtn).ccName
+                + " , "+ListActivity.SortingList.get(ListActivity.SelectedBtn).ccbaAsno
+                + " , "+ListActivity.SortingList.get(ListActivity.SelectedBtn).ccbaCtcd
+                + " , "+ListActivity.SortingList.get(ListActivity.SelectedBtn).ccbaKdcd);
+
+
+
         txtContent = (TextView) findViewById(R.id.imgText);
         txtName = (TextView) findViewById(R.id.imgTitle);
         txtNum = (TextView) findViewById(R.id.imgHo);
@@ -62,10 +67,10 @@ public class ListClickActivity extends AppCompatActivity {
 
         imageView = (ImageView) findViewById(R.id.imageView3);
 
-        strServiceUrl = "https://www.cha.go.kr/cha/SearchKindOpenapiDt.do?ccbaKdcd="
-                +ccbaKdcd
-                + "&ccbaAsno="+ccbaAsno
-                +"&ccbaCtcd="+ccbaCtcd+"";
+        strServiceUrl = "https://www.cha.go.kr/cha/SearchKindOpenapiDt.do?" +
+                "ccbaKdcd=" + ListActivity.SortingList.get(ListActivity.SelectedBtn).ccbaKdcd
+                + "&ccbaAsno=" + ListActivity.SortingList.get(ListActivity.SelectedBtn).ccbaAsno
+                +"&ccbaCtcd=" + ListActivity.SortingList.get(ListActivity.SelectedBtn).ccbaCtcd;
         //strServiceKey = "ya1BKq8iExZZZGk0EFE%2FFBzsuvW7zg3UxJ%2B2urlfmuw%2FsKlgCy%2BOt5kwNhwJbeTFoNkk26k0TcuCMjrVC4HX8Q%3D%3D";
         //strUrl = strServiceUrl + "?serviceKey=" + strServiceKey;
 
@@ -173,7 +178,8 @@ public class ListClickActivity extends AppCompatActivity {
                 }
 
                 txtName.setText(strName.toString());
-                txtNum.setText(strNum.toString());
+                txtNum.setText(strNum.toString()+"\n거리 : 약"
+                        +ListActivity.SortingList.get(ListActivity.SelectedBtn).nowDistance+" km");
                 txtAddress.setText(strAddress.toString());
                 txtContent.setText(strContent.toString());
             } catch (Exception e) {

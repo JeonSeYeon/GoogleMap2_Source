@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="275dp"
         android:fontFamily="@font/nanumbarunpenb"
-        app:srcCompat="@drawable/tndfpans" />
+        app:srcCompat="@drawable/notfound" />
 
     <ImageView
         android:id="@+id/imageView5"

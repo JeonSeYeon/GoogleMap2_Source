@@ -68,7 +68,7 @@ import java.util.Locale;
 public class MapsActivity extends AppCompatActivity
         implements OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback,GoogleMap.OnCameraIdleListener{
-    private GoogleMap mMap;
+    public static GoogleMap mMap;
 
     private Geocoder geocoder;
     private Button button;
