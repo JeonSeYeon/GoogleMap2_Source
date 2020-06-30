@@ -132,7 +132,6 @@ public class MapsActivity extends AppCompatActivity
         manager.setRenderer(new MapCluster(this, mMap, manager));
         manager.setAnimation(true);
 
-
         for(int i =0; i< arrayList.size(); i++){
             Log.d(TAG, "Receive DATA " + arrayList.get(i).getName());
         }
